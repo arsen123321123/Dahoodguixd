@@ -1,0 +1,74 @@
+
+
+wait(3)
+
+local player = game.Players.LocalPlayer
+local chatService = game:GetService("Chat")
+
+-- Function to send a chat message
+local function sendChatMessage(message)
+    chatService:Chat(player.Character.Head, message, Enum.ChatColor.Blue)
+end
+
+-- Call the function to send "Hi"
+sendChatMessage("Hi")
+wait(2)
+local player = game.Players.LocalPlayer
+local chatService = game:GetService("Chat")
+
+-- Function to send a chat message
+local function sendChatMessage1(message)
+    chatService:Chat(player.Character.Head, message, Enum.ChatColor.Blue)
+end
+
+-- Call the function to send "Hi"
+sendChatMessage1("Do you want know secret?")
+wait(3)
+local player = game.Players.LocalPlayer
+local chatService = game:GetService("Chat")
+
+-- Function to send a chat message
+local function sendChatMessage3(message)
+    chatService:Chat(player.Character.Head, message, Enum.ChatColor.Blue)
+end
+
+local player = game.Players.LocalPlayer
+local chatService = game:GetService("Chat")
+
+-- Function to send a chat message
+local function sendChatMessage12(message)
+    chatService:Chat(player.Character.Head, message, Enum.ChatColor.Blue)
+end
+
+-- Call the function to send "Hi"
+sendChatMessage12("You got rickrolled😂😂")
+wait(1.6)
+local function flingPlayer()
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+    if not character then
+        return
+    end
+
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if not humanoidRootPart then
+        return
+    end
+
+    -- Define the direction and magnitude
+    local flingDirection = Vector3.new(0, 0, 15) -- 15 studs in the Z direction
+    local flingMagnitude = 5000 -- Adjust this value for the strength of the fling
+
+    -- Create and configure BodyVelocity
+    local bodyVelocity = Instance.new("BodyVelocity")
+    bodyVelocity.Velocity = flingDirection.Unit * flingMagnitude
+    bodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge) -- Apply force in all directions
+    bodyVelocity.P = 1250 -- Power of the force
+    bodyVelocity.Parent = humanoidRootPart
+
+    -- Remove the BodyVelocity after a short time to stop applying force
+    game:GetService("Debris"):AddItem(bodyVelocity, 0.1) -- Adjust duration if needed
+end
+
+-- Automatically trigger the fling
+flingPlayer()
